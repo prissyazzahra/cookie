@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_home" translatable="false">Beranda</string>
+    <string name="add_recipe">Tambah Resep</string>
+    <string name="button_start">Mulai</string>
+    <string name="button_stop">Berhenti</string>
+    <string name="title_timer" translatable="false">Pewaktu</string>
+    <string name="button_pause">Jeda</string>
+</resources>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name" translatable="false">Cookie</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard" translatable="false">Dashboard</string>
+    <string name="title_notifications" translatable="false">Notifications</string>
+    <string name="title_timer">Timer</string>
+    <string name="add_recipe">Add Recipe</string>
+    <string name="button_start">Start</string>
+    <string name="button_stop">Stop</string>
+    <string name="button_pause">Pause</string>
+</resources>
