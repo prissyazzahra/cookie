@@ -8,4 +8,17 @@
     <string name="button_start">Start</string>
     <string name="button_stop">Stop</string>
     <string name="button_pause">Pause</string>
+    <string name="ingredient_hint">1 clove of garlic</string>
+    <string name="ingredient_label">Ingredients</string>
+    <string name="steps_label">Steps</string>
+    <string name="steps_hint">First, crush the garlic…</string>
+    <string name="food_image">Food Image</string>
+    <string name="choose_image">Choose an Image…</string>
+    <string name="save">Save</string>
+    <string name="description">Food Image</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="pause">Pause</string>
+    <string name="name_label">Name</string>
+    <string name="name_hint">Sambal Bawang</string>
 </resources>

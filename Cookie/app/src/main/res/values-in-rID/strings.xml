@@ -6,4 +6,17 @@
     <string name="button_stop">Berhenti</string>
     <string name="title_timer" translatable="false">Pewaktu</string>
     <string name="button_pause">Jeda</string>
+    <string name="ingredient_hint">1 siung bawang putih</string>
+    <string name="ingredient_label">Bahan-bahan</string>
+    <string name="steps_label">Langkah-langkah</string>
+    <string name="steps_hint">Pertama, geprek bawangnya…</string>
+    <string name="food_image">Foto Makanan</string>
+    <string name="choose_image">Pilih Foto…</string>
+    <string name="save">Simpan</string>
+    <string name="description">Foto Makanan</string>
+    <string name="start">Mulai</string>
+    <string name="stop">Stop</string>
+    <string name="pause">Jeda</string>
+    <string name="name_label">Nama</string>
+    <string name="name_hint">Garlic Paste</string>
 </resources>

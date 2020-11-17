@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.dashboard
+package id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.timer
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.dashboard
+package id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.timer
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,7 +21,7 @@ class TimerFragment : Fragment() {
     ): View? {
         timerViewModel =
                 ViewModelProviders.of(this).get(TimerViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        val root = inflater.inflate(R.layout.fragment_timer, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
         timerViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it

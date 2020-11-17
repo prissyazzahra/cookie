@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_dashboard"
-        android:name="id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.dashboard.TimerFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:name="id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.timer.TimerFragment"
+        android:label="@string/title_timer"
+        tools:layout="@layout/fragment_timer" />
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.notifications.NotificationsFragment"
+        android:name="id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.addrecipe.AddRecipeFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_add_recipe" />
 </navigation>

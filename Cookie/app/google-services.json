@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "595918556528",
+    "firebase_url": "https://cookie-2ff49.firebaseio.com",
+    "project_id": "cookie-2ff49",
+    "storage_bucket": "cookie-2ff49.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595918556528:android:9a2fbc400a24ce558753b5",
+        "android_client_info": {
+          "package_name": "id.ac.ui.cs.mobileprogramming.prissy.cookie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595918556528-v3fm81j7ji1tmk6kf6g1gjsj630nvp6m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_U-GX7-rIjO9A1hWlB65FIW7J5AepSFE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "595918556528-v3fm81j7ji1tmk6kf6g1gjsj630nvp6m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
