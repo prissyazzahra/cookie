@@ -7,11 +7,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.R
+import id.ac.ui.cs.mobileprogramming.prissy.cookie.models.Recipe
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.addrecipe.AddRecipeFragment
 
 class HomeFragment : Fragment() {
-
+    private lateinit var recyclerView: RecyclerView
     private lateinit var homeViewModel: HomeViewModel
 
     override fun onCreateView(
@@ -22,17 +25,12 @@ class HomeFragment : Fragment() {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
-//        homeViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
+        recyclerView = root.findViewById(R.id.recyclerview);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(LinearLayoutManager(root.context));
+        recyclerView.setAdapter(RecipeListAdapter());
         setHasOptionsMenu(true)
         return root
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.add_recipe_nav, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

@@ -1,22 +1,18 @@
 package id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
+import android.app.Application
+import androidx.lifecycle.*
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.models.Recipe
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.repository.RecipeRepository
+import kotlinx.coroutines.launch
 
-class HomeViewModel(private val repository: RecipeRepository) : ViewModel() {
-    val allRecipe: LiveData<List<Recipe>> = repository.allRecipe
-}
+class HomeViewModel(application: Application) : AndroidViewModel(application) {
+    val recipes = MutableLiveData<List<Recipe>>();
+    private var repository: RecipeRepository = RecipeRepository(application)
 
-class HomeViewModelFactory(private val repository: RecipeRepository) : ViewModelProvider.Factory {
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return HomeViewModel(repository) as T
+    fun getRecipes() {
+        viewModelScope.launch {
+            recipes.value = repository.getAllRecipes()
         }
-        throw IllegalArgumentException("Unknown ViewModel class")
     }
 }

@@ -3,6 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard" translatable="false">Dashboard</string>
     <string name="title_notifications" translatable="false">Notifications</string>
+    <string name="timer" translatable="false">00:00</string>
     <string name="title_timer">Timer</string>
     <string name="add_recipe">Add Recipe</string>
     <string name="button_start">Start</string>
