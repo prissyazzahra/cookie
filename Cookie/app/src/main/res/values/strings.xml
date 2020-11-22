@@ -21,5 +21,12 @@
     <string name="stop">Stop</string>
     <string name="pause">Pause</string>
     <string name="name_label">Name</string>
-    <string name="name_hint">Sambal Bawang</string>
+    <string name="name_hint">Garlic Paste</string>
+    <string name="timer_done">Timer Done!</string>
+    <string name="lets_cook">Let\'s continue cooking.</string>
+    <string name="timer_running">Timer is Running.</string>
+    <string name="end">End in: %1$s</string>
+    <string name="timer_paused">Timer is paused.</string>
+    <string name="resume">Resume?</string>
+    <string name="set_timer">Set Timer</string>
 </resources>

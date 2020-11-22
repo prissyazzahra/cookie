@@ -9,13 +9,12 @@ import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.R
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.utils.PrefUtil
-import id.ac.ui.cs.mobileprogramming.prissy.cookie.utils.TimerExpiredReceiver
+import id.ac.ui.cs.mobileprogramming.prissy.cookie.TimerExpiredReceiver
+import id.ac.ui.cs.mobileprogramming.prissy.cookie.utils.NotificationUtil
 import kotlinx.android.synthetic.main.fragment_timer.*
 import kotlinx.android.synthetic.main.fragment_timer.view.*
 import java.util.*
@@ -23,6 +22,12 @@ import java.util.*
 class TimerFragment : Fragment() {
 
     companion object {
+        @JvmStatic
+        fun newInstance(mins: Int) = TimerFragment().apply {
+            arguments = Bundle().apply {
+                putInt("MINS_SET", mins)
+            }
+        }
         fun setAlarm(context: Context, current: Long, timeLeft: Long): Long {
             val wakeUpTime = (current + timeLeft) * 1000
             val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
@@ -67,27 +72,24 @@ class TimerFragment : Fragment() {
         timerViewModel =
                 ViewModelProviders.of(this).get(TimerViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_timer, container, false)
-        root.play.setOnClickListener {v ->
+        root.play.setOnClickListener {
+            setNewTimerLength()
             startTimer()
             timerState = TimerState.Running
             updateButtons()
         }
 
-        root.pause.setOnClickListener { v ->
+        root.pause.setOnClickListener {
             timer.cancel()
             timerState = TimerState.Paused
             updateButtons()
         }
 
-        root.stop.setOnClickListener { v ->
+        root.stop.setOnClickListener {
             timer.cancel()
             timerState = TimerState.Paused
             onTimerFinished()
         }
-//        val textView: TextView = root.findViewById(R.id.text_dashboard)
-//        timerViewModel.text.observe(viewLifecycleOwner, Observer {
-//            textView.text = it
-//        })
         return root
     }
 
@@ -96,6 +98,7 @@ class TimerFragment : Fragment() {
         initTimer()
 
         removeAlarm(requireContext())
+        NotificationUtil.hideTimerNotification(requireContext())
     }
 
     override fun onPause() {
@@ -104,8 +107,9 @@ class TimerFragment : Fragment() {
         if (timerState == TimerState.Running) {
             timer.cancel()
             val wakeUpTime = setAlarm(requireContext(), nowSeconds, secondsRemaining)
+            NotificationUtil.showTimerRunning(requireContext(), wakeUpTime)
         } else if (timerState == TimerState.Paused) {
-            // TODO
+            NotificationUtil.showTimerPaused(requireContext())
         }
         PrefUtil.setPreviousTimerLengthSeconds(timerLengthSeconds, requireContext())
         PrefUtil.setSecondsRemaining(secondsRemaining, requireContext())

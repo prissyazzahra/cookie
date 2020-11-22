@@ -7,6 +7,25 @@
     tools:context=".ui.timer.TimerFragment">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/time_input"
+        android:text="@string/set_timer"
+        android:textColor="@color/black"
+        android:layout_above="@id/time_input"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/time_input"
+        android:inputType="number"
+        android:layout_width="100dp"
+        android:autofillHints="Set timer"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/timer_text"
+        />
+
+    <TextView
         android:id="@+id/timer_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

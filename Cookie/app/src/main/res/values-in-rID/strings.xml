@@ -18,5 +18,12 @@
     <string name="stop">Stop</string>
     <string name="pause">Jeda</string>
     <string name="name_label">Nama</string>
-    <string name="name_hint">Garlic Paste</string>
+    <string name="name_hint">Sambal Bawang</string>
+    <string name="timer_done">Pewaktu Selesai!</string>
+    <string name="lets_cook">Yuk, lanjut masak!</string>
+    <string name="timer_running">Pewaktu  sedang Berjalan.</string>
+    <string name="end">Selesai dalam: %1$s</string>
+    <string name="timer_paused">Pewaktu  berhenti.</string>
+    <string name="resume">Lanjutkan?</string>
+    <string name="set_timer">Atur Durasi</string>
 </resources>
