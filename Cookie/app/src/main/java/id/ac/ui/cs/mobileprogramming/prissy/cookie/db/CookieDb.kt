@@ -4,12 +4,15 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import id.ac.ui.cs.mobileprogramming.prissy.cookie.models.Nutrition
+import id.ac.ui.cs.mobileprogramming.prissy.cookie.models.NutritionDao
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.models.Recipe
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.models.RecipeDao
 
-@Database(entities = [Recipe::class], version = 1)
+@Database(entities = [Recipe::class, Nutrition::class], version = 2)
 abstract class CookieDb : RoomDatabase() {
     abstract fun recipeDao(): RecipeDao
+    abstract fun nutritionDao(): NutritionDao
 
     companion object {
         @Volatile

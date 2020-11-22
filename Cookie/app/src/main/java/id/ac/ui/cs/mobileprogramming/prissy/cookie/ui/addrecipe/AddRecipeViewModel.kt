@@ -2,10 +2,7 @@ package id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.addrecipe
 
 import android.app.Application
 import android.graphics.Bitmap
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.models.Recipe
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.repository.RecipeRepository
 import kotlinx.coroutines.Dispatchers
@@ -26,7 +23,7 @@ class AddRecipeViewModel(application: Application) : AndroidViewModel(applicatio
     val text: LiveData<String> = _text
 
     fun insertRecipe(name: String, ingredients: String, steps: String, image: Bitmap) {
-        GlobalScope.launch(Dispatchers.Main) {
+        viewModelScope.launch(Dispatchers.Main) {
             withContext(Dispatchers.IO) {
                 val imageString = convertBitmap(image)
                 recipe = Recipe(name = name, ingredients = ingredients, steps = steps, image = imageString)

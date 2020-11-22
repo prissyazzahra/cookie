@@ -10,7 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.R
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.utils.PrefUtil
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.TimerExpiredReceiver
@@ -70,7 +70,7 @@ class TimerFragment : Fragment() {
     ): View? {
 
         timerViewModel =
-                ViewModelProviders.of(this).get(TimerViewModel::class.java)
+            ViewModelProvider(requireActivity()).get(TimerViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_timer, container, false)
         root.play.setOnClickListener {
             setNewTimerLength()

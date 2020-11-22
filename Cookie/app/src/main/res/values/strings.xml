@@ -29,4 +29,9 @@
     <string name="timer_paused">Timer is paused.</string>
     <string name="resume">Resume?</string>
     <string name="set_timer">Set Timer</string>
+    <string name="calories">Calories</string>
+    <string name="nutrition_list">Nutrition List</string>
+    <string name="add_nutrition">Add Nutrition</string>
+    <string name="nutrition_hint">Chicken</string>
+    <string name="calories_hint" translatable="false">200</string>
 </resources>

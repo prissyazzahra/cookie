@@ -11,4 +11,9 @@
         android:icon="@drawable/ic_timer_black_24dp"
         android:title="@string/title_timer" />
 
+    <item
+        android:id="@+id/navigation_nutrition"
+        android:icon="@drawable/ic_nutrition_black_24dp"
+        android:title="@string/nutrition_list" />
+
 </menu>

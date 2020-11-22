@@ -18,5 +18,5 @@ data class Recipe(
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "recipe_id")
-    var id: Int = 1
+    var id: Int = 0
 }

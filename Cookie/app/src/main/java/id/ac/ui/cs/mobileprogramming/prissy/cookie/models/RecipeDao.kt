@@ -12,7 +12,7 @@ interface RecipeDao {
     @Query("SELECT * FROM recipe ORDER BY name ASC")
     suspend fun getAscRecipes(): List<Recipe>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertRecipe(recipe: Recipe)
 
     @Query("SELECT * FROM recipe WHERE recipe_id=:id")

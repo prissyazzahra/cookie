@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.nutrition.NutritionFragment">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -15,7 +15,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="75dp"
-        android:contentDescription="@string/add_recipe"
+        android:contentDescription="@string/add_nutrition"
         android:padding="@dimen/bigger_margin"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
@@ -25,6 +25,6 @@
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/recipe_item"
+        tools:listitem="@layout/nutrition_item"
         android:layout_centerHorizontal="true"/>
 </RelativeLayout>

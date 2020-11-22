@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.timer.TimerFragment"
+    android:baselineAligned="false"
+    android:weightSum="2"
+    >
+
+    <RelativeLayout
+        android:id="@+id/div"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/time_input"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/set_timer"
+            android:textColor="@color/black"
+            android:layout_above="@id/time_input"/>
+
+        <EditText
+            android:id="@+id/time_input"
+            android:inputType="number"
+            android:layout_width="100dp"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:autofillHints="Set timer"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/timer_text"
+            />
+
+        <TextView
+            android:id="@+id/timer_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_reg"
+            android:text="@string/timer"
+            android:textColor="@color/black"
+            android:textSize="80sp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round"
+            android:padding="16dp"
+            android:layout_marginStart="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_stop_black_24dp"
+            android:layout_toEndOf="@id/pause"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pause"
+            android:layout_marginStart="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round"
+            android:padding="16dp"
+            android:src="@drawable/ic_pause_black_24dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/play"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round"
+            android:padding="16dp"
+            android:src="@drawable/ic_play_arrow_black_24dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="80dp"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

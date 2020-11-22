@@ -26,4 +26,8 @@
     <string name="timer_paused">Pewaktu  berhenti.</string>
     <string name="resume">Lanjutkan?</string>
     <string name="set_timer">Atur Durasi</string>
+    <string name="calories">Kalori</string>
+    <string name="nutrition_list">Daftar Nutrisi</string>
+    <string name="add_nutrition">Tambah Nutrisi</string>
+    <string name="nutrition_hint">Ayam</string>
 </resources>

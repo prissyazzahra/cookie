@@ -22,11 +22,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProvider
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.MainActivity
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.R
+import id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.home.HomeFragment
 import kotlinx.android.synthetic.main.fragment_add_recipe.*
+import java.util.zip.Inflater
 
 
 class AddRecipeFragment : Fragment() {
@@ -44,7 +47,7 @@ class AddRecipeFragment : Fragment() {
     ): View? {
         (activity as AppCompatActivity?)!!.supportActionBar?.setTitle("Add Recipe")
         addRecipeViewModel =
-            ViewModelProviders.of(this).get(AddRecipeViewModel::class.java)
+            ViewModelProvider(requireActivity()).get(AddRecipeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_add_recipe, container, false)
 
         val chooseImageButton: Button = root.findViewById(R.id.chooseImageButton)
@@ -71,6 +74,8 @@ class AddRecipeFragment : Fragment() {
                 ingredients = ingredients.text.toString(),
                 steps = steps.text.toString())
             Toast.makeText(requireContext(), "Recipe added!", Toast.LENGTH_SHORT).show()
+            val frag = parentFragmentManager
+            frag.beginTransaction().replace(R.id.nav_host_fragment, HomeFragment()).commit()
         }
         return root
     }

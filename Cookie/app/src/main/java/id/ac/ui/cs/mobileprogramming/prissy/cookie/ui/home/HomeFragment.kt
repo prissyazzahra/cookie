@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -26,8 +25,9 @@ class HomeFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel::class.java)
+                ViewModelProvider(requireActivity()).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
+        homeViewModel.getRecipes()
 
         val button = root.findViewById<FloatingActionButton>(R.id.fab)
 
@@ -39,12 +39,9 @@ class HomeFragment : Fragment() {
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
                 .commit()
         }
-
-        val viewModel = ViewModelProvider(requireActivity()).get(HomeViewModel::class.java)
         recyclerView = root.findViewById(R.id.recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        viewModel.recipes.observe(viewLifecycleOwner, Observer {
-            System.out.println(it)
+        homeViewModel.recipes.observe(viewLifecycleOwner, Observer {
             val adapter = RecipeListAdapter(requireContext(), it)
             recyclerView.adapter = adapter
         })
