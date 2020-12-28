@@ -2,9 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/add_recipe"
-        android:icon="@drawable/ic_add_black_24dp"
-        android:title="@string/add_recipe"
-        app:showAsAction="ifRoom"
-        />
+        android:id="@+id/about"
+        android:title="@string/about_us" />
 </menu>
