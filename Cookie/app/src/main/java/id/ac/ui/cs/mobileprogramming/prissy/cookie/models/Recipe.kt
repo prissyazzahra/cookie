@@ -15,6 +15,8 @@ data class Recipe(
 
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
     var image: ByteArray
+
+
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "recipe_id")

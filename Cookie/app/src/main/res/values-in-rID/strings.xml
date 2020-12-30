@@ -31,4 +31,5 @@
     <string name="add_nutrition">Tambah Nutrisi</string>
     <string name="nutrition_hint">Ayam</string>
     <string name="about_us">Tentang Kami</string>
+    <string name="about_us_message">Halo! Aplikasi ini dibuat oleh Prissy Azzahra untuk memenuhi tugas TKBM-TPL.</string>
 </resources>
