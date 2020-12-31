@@ -27,6 +27,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.MainActivity
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.R
+import id.ac.ui.cs.mobileprogramming.prissy.cookie.external.PortionCategory
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.home.HomeFragment
 import kotlinx.android.synthetic.main.fragment_add_recipe.*
 import java.util.zip.Inflater
@@ -55,6 +56,7 @@ class AddRecipeFragment : Fragment() {
         val name: EditText = root.findViewById(R.id.name_input)
         val ingredients: EditText = root.findViewById(R.id.ing_input)
         val steps: EditText = root.findViewById(R.id.step_input)
+        val portion: EditText = root.findViewById(R.id.portion_input)
 
         chooseImageButton.setOnClickListener {
             if (context?.let { it1 ->
@@ -72,7 +74,9 @@ class AddRecipeFragment : Fragment() {
             addRecipeViewModel.insertRecipe(image = bitmap,
                 name = name.text.toString(),
                 ingredients = ingredients.text.toString(),
-                steps = steps.text.toString())
+                steps = steps.text.toString(),
+                portion = portion.text.toString().toInt()
+            )
             Toast.makeText(requireContext(), "Recipe added!", Toast.LENGTH_SHORT).show()
             val frag = parentFragmentManager
             frag.beginTransaction().replace(R.id.nav_host_fragment, HomeFragment()).commit()

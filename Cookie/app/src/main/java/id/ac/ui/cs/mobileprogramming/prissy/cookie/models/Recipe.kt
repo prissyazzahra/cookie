@@ -14,9 +14,13 @@ data class Recipe(
     var steps: String,
 
     @ColumnInfo(typeAffinity = ColumnInfo.BLOB)
-    var image: ByteArray
+    var image: ByteArray,
 
+    @ColumnInfo(name = "portion")
+    var portion: Int,
 
+    @ColumnInfo(name = "category")
+    var category: String
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "recipe_id")

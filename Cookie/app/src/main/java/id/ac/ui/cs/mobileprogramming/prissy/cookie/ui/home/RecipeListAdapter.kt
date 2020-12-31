@@ -17,6 +17,7 @@ class RecipeListAdapter(internal var context: Context, internal var list: List<R
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name: TextView = itemView.findViewById(R.id.name)
         var image: ImageView = itemView.findViewById(R.id.image)
+        var portion: TextView = itemView.findViewById(R.id.portion)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -32,5 +33,6 @@ class RecipeListAdapter(internal var context: Context, internal var list: List<R
         val bmp = BitmapFactory.decodeByteArray(list[position].image, 0, list[position].image.size)
         holder.name.text = list[position].name
         holder.image.setImageBitmap(Bitmap.createBitmap(bmp))
+        holder.portion.text = list[position].category
     }
 }

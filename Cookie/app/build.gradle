@@ -19,6 +19,13 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    externalNativeBuild {
+        cmake {
+            path 'src/main/cpp/CMakeLists.txt'
+            version "3.10.2"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

@@ -53,6 +53,25 @@
             android:textColor="@color/darkBlue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Portion"
+            android:fontFamily="@font/nunito_semibold"
+            android:layout_marginTop="20dp"
+            />
+
+        <EditText
+            android:id="@+id/portion_input"
+            android:hint="@string/_10"
+            android:autofillHints="no"
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_light"
+            />
+
+        <TextView
+            android:textColor="@color/darkBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/steps_label"
             android:fontFamily="@font/nunito_semibold"
             android:layout_marginTop="20dp"
@@ -97,7 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_button"
-            android:layout_marginBottom="0dp"
+            android:layout_marginBottom="80dp"
             android:text="@string/save"
             android:textColor="@color/white"
             android:layout_marginTop="20dp"

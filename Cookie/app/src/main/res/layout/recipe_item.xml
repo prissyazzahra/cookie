@@ -25,12 +25,21 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
+            android:layout_marginTop="15dp"
             android:layout_marginStart="10dp"
             android:layout_toEndOf="@id/image"
             android:fontFamily="@font/nunito_bold"
             android:text="@string/name_label"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/portion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Portion Category"
+            android:layout_below="@+id/name"
+            android:layout_alignStart="@+id/name"
+            android:fontFamily="@font/nunito_light"/>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
