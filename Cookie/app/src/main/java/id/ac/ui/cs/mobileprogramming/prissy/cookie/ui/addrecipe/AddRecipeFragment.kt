@@ -5,32 +5,25 @@ import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
-import android.graphics.ImageDecoder
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
+import android.provider.Settings
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
-import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import id.ac.ui.cs.mobileprogramming.prissy.cookie.MainActivity
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.R
-import id.ac.ui.cs.mobileprogramming.prissy.cookie.external.PortionCategory
 import id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.home.HomeFragment
 import kotlinx.android.synthetic.main.fragment_add_recipe.*
-import java.util.zip.Inflater
 
 
 class AddRecipeFragment : Fragment() {
@@ -69,6 +62,7 @@ class AddRecipeFragment : Fragment() {
                 val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
                 startActivityForResult(gallery, pickImage)
             }
+            Log.d("INFO", "ke klik kok")
         }
         saveButton.setOnClickListener {
             addRecipeViewModel.insertRecipe(image = bitmap,
@@ -92,5 +86,46 @@ class AddRecipeFragment : Fragment() {
             image.setImageBitmap(bitmap)
             image.setImageURI(imageUri)
         }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode) {
+            PICK_FROM_GALLERY -> if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+                startActivityForResult(gallery, pickImage)
+            } else if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_DENIED) {
+                val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
+                builder.setTitle(R.string.title_permission)
+                builder.setMessage(R.string.desc_permission)
+                builder.setPositiveButton(R.string.settings) { dialog, which ->
+                    dialog.cancel()
+                    openSettings()
+                }
+                builder.setNegativeButton(
+                    getString(android.R.string.cancel)
+                ) { dialog, which -> dialog.cancel() }
+                builder.show()
+            }
+            else -> {
+                Toast.makeText(
+                    requireContext(),
+                    "Can't choose photo from gallery",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+    }
+
+    private fun openSettings() {
+        val intent = Intent()
+        intent.action = Settings.ACTION_APPLICATION_DETAILS_SETTINGS
+        val uri = Uri.fromParts("package", activity?.packageName, null)
+        intent.data = uri
+        requireContext().startActivity(intent)
     }
 }
