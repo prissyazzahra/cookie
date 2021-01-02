@@ -33,6 +33,7 @@
     <string name="about_us">Tentang Kami</string>
     <string name="about_us_message">Halo! Aplikasi ini dibuat oleh Prissy Azzahra untuk memenuhi tugas TKBM-TPL.</string>
     <string name="_10">10</string>
-    <string name="title_permission">Permission Denied</string>
+    <string name="title_permission">Perizinan Ditolak</string>
     <string name="settings">GO TO SETTINGS</string>
+    <string name="restaurant_list">Daftar Restoran</string>
 </resources>

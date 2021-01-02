@@ -18,21 +18,32 @@
             android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="20dp"
             android:fontFamily="@font/nunito_bold"
             android:text="@string/name_label"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <TextView
-            android:id="@+id/calories"
+            android:id="@+id/type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/nunito_reg"
-            android:textSize="15sp"
-            android:layout_below="@id/name"
-            android:text="@string/name_label"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:text="Type"
+            android:layout_below="@+id/name"
+            android:layout_alignStart="@+id/name"
+            android:fontFamily="@font/nunito_light"/>
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30sp"
+            android:textSize="40sp"
+            android:fontFamily="@font/nunito_bold"
+            android:textColor="@color/colorAccent"/>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

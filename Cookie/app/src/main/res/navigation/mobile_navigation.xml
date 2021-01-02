@@ -18,9 +18,9 @@
         tools:layout="@layout/fragment_timer" />
 
     <fragment
-        android:id="@+id/navigation_nutrition"
-        android:name="id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.addrecipe.AddRecipeFragment"
-        android:label="@string/add_nutrition"
-        tools:layout="@layout/fragment_nutrition" />
+        android:id="@+id/navigation_restaurant"
+        android:name="id.ac.ui.cs.mobileprogramming.prissy.cookie.ui.restaurant.RestaurantFragment"
+        android:label="@string/restaurant_list"
+        tools:layout="@layout/restaurant_fragment" />
 
 </navigation>

@@ -102,13 +102,13 @@ class AddRecipeFragment : Fragment() {
                 val builder: AlertDialog.Builder = AlertDialog.Builder(requireContext())
                 builder.setTitle(R.string.title_permission)
                 builder.setMessage(R.string.desc_permission)
-                builder.setPositiveButton(R.string.settings) { dialog, which ->
+                builder.setPositiveButton(R.string.settings) { dialog, _ ->
                     dialog.cancel()
                     openSettings()
                 }
                 builder.setNegativeButton(
                     getString(android.R.string.cancel)
-                ) { dialog, which -> dialog.cancel() }
+                ) { dialog, _ -> dialog.cancel() }
                 builder.show()
             }
             else -> {
