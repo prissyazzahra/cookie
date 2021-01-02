@@ -23,7 +23,6 @@ class RestaurantViewModel(application: Application) : AndroidViewModel(applicati
             try {
                 val response = retrofit.getRestaurants().body()
                 restaurants.value = response
-                Log.d("INFO", response.toString())
             }
             catch (e: Error) {
                 Log.d("ERROR", "Error occurred")
