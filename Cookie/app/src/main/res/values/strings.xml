@@ -47,4 +47,6 @@
     <string name="desc_permission" translatable="false">This app needs to access your files to add a picture for your recipe. You can allow permissions by going to the permissions tab in your app settings.</string>
     <string name="settings">GO TO SETTINGS</string>
     <string name="restaurant_list">Restaurant List</string>
+    <string name="title_connection">No Connection</string>
+    <string name="desc_connection">Please connect to the Internet to get lists of restaurants.</string>
 </resources>
